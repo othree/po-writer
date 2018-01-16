@@ -1,0 +1,25 @@
+{
+  "name": "po-writer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/othree/po-writer.git"
+  },
+  "keywords": [
+    "po",
+    "gettext"
+  ],
+  "author": "othree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/othree/po-writer/issues"
+  },
+  "homepage": "https://github.com/othree/po-writer#readme"
+}

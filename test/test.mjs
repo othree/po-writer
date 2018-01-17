@@ -26,6 +26,11 @@ trans.add({
 multiline string`
 });
 
+trans.add({
+  id: 'test 4',
+  str: 'test for doublequote <span class="active">in string</span> and long long long long long long string'
+});
+
 trans.writeToStream(stream);
 
 console.log(buffer);

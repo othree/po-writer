@@ -131,7 +131,7 @@ export default class Pofile {
         lines.push(`msgctxt ${quote(msg.context)}`);
       }
 
-      lines.push(`msgid ${quote(msg.id)}`);
+      lines.push(`msgid ${normalizeMsgStr(msg.id)}`);
       if (msg.plural) {
         lines.push(`msgplural ${quote(msg.plural)}`);
         let pluralStrs = arr(msg.str);

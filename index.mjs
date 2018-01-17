@@ -2,8 +2,8 @@
 const now = new Date();
 
 const defaultHeader = {
-  'Project-Id-Version': '',
-  'Report-Msgid-Bugs-To': '',
+  'Project-Id-Version': 'PACKAGE VERSION',
+  'Report-Msgid-Bugs-To': 'none',
   'POT-Creation-Date': now,
   'PO-Revision-Date': now,
   'Last-Translator': '',

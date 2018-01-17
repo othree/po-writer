@@ -41,7 +41,7 @@ const chunkStr = (str, size) => {
   return chunks;
 };
 
-const skipOneElem = arr => arr.length > 1 ? arr.unshift('') : arr;
+const skipOneElem = arr => arr.length > 1 ? (arr.unshift(''), arr) : arr;
 
 const normalizeMsgStr = str => {
   return skipOneElem(chunkStr(str, 68)).map(quote).join('\n');

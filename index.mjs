@@ -27,6 +27,7 @@ const headerOrder = [
   'Plural-Forms'
 ];
 
+const pad = num => num >= 10 ? `${num}` : `0${num}`;
 const arr = elem => Array.isArray(elem) ? elem : [elem];
 const quote = text => `"${text.replace(/\n/g, '\\n').replace(/\\/g, '\\').replace(/"/g, '\\"')}"`;
 
@@ -75,13 +76,11 @@ export default class Pofile {
     let hours = Math.floor(Math.abs(offset) / 60);
     let minutes = Math.abs(offset) - hours * 60;
 
-    let pad = num => num >= 10 ? `${num}` : `0${num}`;
-
     return `${sign}${pad(hours)}${pad(minutes)}`;
   }
 
   formatDate (d) {
-    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()} ${d.getHours()}:${d.getMinutes()}${this.formatTimezone(d.getTimezoneOffset())}`;
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}${this.formatTimezone(d.getTimezoneOffset())}`;
   }
 
   serializeHeader (headers) {

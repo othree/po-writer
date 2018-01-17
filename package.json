@@ -8,6 +8,9 @@
   "scripts": {
     "test": "node --experimental-modules test/test.mjs"
   },
+  "directories": {
+    "test": "test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/othree/po-writer.git"

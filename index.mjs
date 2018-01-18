@@ -49,11 +49,36 @@ const normalizeMsgStr = str => {
 };
 
 export default class Pofile {
+  /**
+   * @param {object} header Po file header
+   */
   constructor (header = {}) {
     this.header = Object.assign({}, defaultHeader, header);
     this.msgs = new Map();
   }
 
+  /**
+   * @typedef msg
+   * @type {object}
+   * @property {string} id                 
+   * @property {(string|Array)} str
+   * @property {string} plural
+   * @property {string} translatorComments
+   * @property {string} extractedComments
+   * @property {string} reference
+   * @property {string} flag
+   * @property {string} context
+   *
+   * @see {@link https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html}
+   */
+
+  /**
+   * @method
+   * @name add
+   * @description Add translation entries
+   *
+   * @param {(msg|msg[])} msgs One or more translate messages
+   */
   add (msgs) {
     msgs = arr(msgs);
     for (let msg of msgs) {
@@ -61,6 +86,13 @@ export default class Pofile {
     }
   }
 
+  /**
+   * @method
+   * @name remove
+   * @description Remove translation entries
+   *
+   * @param {(msg|msg[]|string|string[])} ids One or more translate messages/ids
+   */
   remove (ids) {
     ids = arr(ids);
     for (let id of ids) {
@@ -71,6 +103,13 @@ export default class Pofile {
     }
   }
 
+  /**
+   * @method
+   * @name formatTimezone
+   * @description Format timezone offset value to ISO format
+   *
+   * @param {number} offset Timezone offset from getTimezoneOffset
+   */
   formatTimezone (offset) {
     let sign = offset < 0 ? '+' : '-';
     let hours = Math.floor(Math.abs(offset) / 60);
@@ -79,11 +118,23 @@ export default class Pofile {
     return `${sign}${pad(hours)}${pad(minutes)}`;
   }
 
+  /**
+   * @method
+   * @name formatDate
+   * @description Format Date object to ISO string
+   *
+   * @param {Date} d Date object to format
+   */
   formatDate (d) {
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}${this.formatTimezone(d.getTimezoneOffset())}`;
   }
 
-  serializeHeader (headers) {
+  /**
+   * @method
+   * @name serializeHeader
+   * @description Translate header to PO format
+   */
+  serializeHeader () {
     let strs = [''];
     for (let key of headerOrder) {
       let value = this.header[key] || '';
@@ -95,6 +146,13 @@ export default class Pofile {
     return strs;
   }
 
+  /**
+   * @method
+   * @name writeToStream
+   * @description Write translations to writable stream
+   *
+   * @param {Stream} stream Stream to write
+   */
   writeToStream (stream) {
     let writeLines = lines => {
       for (let line of lines) {

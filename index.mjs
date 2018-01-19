@@ -3,7 +3,6 @@ const now = new Date();
 
 const defaultHeader = {
   'Project-Id-Version': 'PACKAGE VERSION',
-  'Report-Msgid-Bugs-To': 'none',
   'POT-Creation-Date': now,
   'PO-Revision-Date': now,
   'Last-Translator': '',
@@ -16,7 +15,6 @@ const defaultHeader = {
 
 const headerOrder = [
   'Project-Id-Version',
-  'Report-Msgid-Bugs-To',
   'POT-Creation-Date',
   'PO-Revision-Date',
   'Last-Translator',
@@ -44,9 +42,7 @@ const chunkStr = (str, size) => {
 
 const skipOneElem = arr => arr.length > 1 ? (arr.unshift(''), arr) : arr;
 
-const normalizeMsgStr = str => {
-  return skipOneElem(chunkStr(str, 68)).map(quote).join('\n');
-};
+const normalizeMsgStr = str => skipOneElem(chunkStr(str, 68)).map(quote).join('\n');
 
 export default class Pofile {
   /**
@@ -60,7 +56,7 @@ export default class Pofile {
   /**
    * @typedef msg
    * @type {object}
-   * @property {string} id                 
+   * @property {string} id
    * @property {(string|Array)} str
    * @property {string} plural
    * @property {string} translatorComments

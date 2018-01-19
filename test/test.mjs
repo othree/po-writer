@@ -36,6 +36,11 @@ trans.add({
   str: 'test translation for long long long long long long long long long long long long long long long string'
 });
 
+trans.add({
+  id: 'test 6',
+  str: 'test for slash \\'
+});
+
 trans.writeToStream(stream);
 
 console.log(buffer);

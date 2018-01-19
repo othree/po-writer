@@ -29,7 +29,7 @@ const headerOrder = [
 
 const pad = num => num >= 10 ? `${num}` : `0${num}`;
 const arr = elem => Array.isArray(elem) ? elem : [elem];
-const quote = text => `"${text.replace(/\n/g, '\\n').replace(/\\/g, '\\').replace(/"/g, '\\"')}"`;
+const quote = text => `"${text.replace(/\n/g, '\\n').replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 
 const chunkStr = (str, size) => {
   const numChunks = Math.ceil(str.length / size);

@@ -8,7 +8,9 @@ const stream = {
   }
 };
 
-const trans = new Po();
+const trans = new Po({
+  'POT-Creation-Date': 'none'
+});
 
 trans.add({
   id: 'test 1',

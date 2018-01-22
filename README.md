@@ -47,7 +47,7 @@ po.writeToStream(stream);
 
 ### `add(msg)`
 
-Add an tranlated [message](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html) to Po.
+Add a tranlated [message](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html) to Po.
 `msg` support attributes:
 
 * translatorComments
@@ -61,7 +61,7 @@ Add an tranlated [message](https://www.gnu.org/software/gettext/manual/html_node
 
 ### `remove(id)`
 
-Remove translation message from Po. `id` is an msg id or an array of msg ids.
+Remove translation message from Po. `id` is a msg id or an array of msg ids.
 
 ### `writeToStream(stream)`
 

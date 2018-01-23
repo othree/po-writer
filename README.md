@@ -47,7 +47,7 @@ po.writeToStream(stream);
 
 ### `add(msg)`
 
-Add a tranlated [message](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html) to Po.
+Add a translated [message](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html) to Po.
 `msg` support attributes:
 
 * translatorComments

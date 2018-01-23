@@ -45,7 +45,7 @@ po.writeToStream(stream);
 * Content-Transfer-Encoding: '8bit',
 * Plural-Forms: 'nplurals=INTEGER; plural=EXPRESSION;'
 
-### `add(msg)`
+### `add(msg|msg[])`
 
 Add a translated [message](https://www.gnu.org/software/gettext/manual/html_node/PO-Files.html) to Po.
 `msg` support attributes:
@@ -59,9 +59,9 @@ Add a translated [message](https://www.gnu.org/software/gettext/manual/html_node
 * plural
 * str (string|string[])
 
-### `remove(id)`
+### `remove(id|id[])`
 
-Remove translation message from Po. `id` is a msg id or an array of msg ids.
+Remove translation message from Po. `id` is a msg id or msg object.
 
 ### `writeToStream(stream)`
 

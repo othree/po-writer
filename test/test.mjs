@@ -43,6 +43,14 @@ trans.add({
   str: 'test for slash \\'
 });
 
+trans.add([{
+  id: 'test 7',
+  str: 'test for add array'
+}, {
+  id: 'test 8',
+  str: 'test for add array'
+}]);
+
 trans.writeToStream(stream);
 
 console.log(buffer);

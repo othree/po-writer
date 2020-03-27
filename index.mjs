@@ -189,7 +189,7 @@ export default class Pofile {
       if (msg.plural) {
         lines.push(`msgplural ${quote(msg.plural)}`);
         let pluralStrs = arr(msg.str);
-        for (let i = 0; i < 10 || i < pluralStrs.length; i++) {
+        for (let i = 0; i < Math.min(pluralStrs.length, 10); i++) {
           lines.push(`msgstr[${i}] ${quote(pluralStrs[i])}`);
         }
       } else {
